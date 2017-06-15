@@ -7,7 +7,7 @@
 
 ## Module
 
-* [自定义模块](module/custom-module.md)
+* [自定义模块](custom-module.md)
 
 ## 附录
 
