@@ -9,6 +9,7 @@
 
 * [自定义模块](custom-module.md)
 * [路由](route.md)
+* [控制器](controller.md)
 
 ## 附录
 
