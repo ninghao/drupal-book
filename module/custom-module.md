@@ -27,7 +27,7 @@ drupal module:install ninghao
 文件：
 
 ```
-modules/custom/ninghao/ninghao.routing.yml 
+modules/custom/ninghao/ninghao.routing.yml
 ```
 
 内容：
