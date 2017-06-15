@@ -11,6 +11,7 @@
 * [路由](route.md)
 * [控制器](controller.md)
 * [服务](service.md)
+* [container](container.md)
 
 ## 附录
 
