@@ -22,25 +22,6 @@ core: 8.x
 drupal module:install ninghao
 ```
 
-## 路由
-
-文件：
-
-```
-modules/custom/ninghao/ninghao.routing.yml
-```
-
-内容：
-
-```
-hello:
-  path: /ninghao/hello
-  defaults:
-    _controller: Drupal\ninghao\Controller\NinghaoController::hello
-  requirements:
-    _permission: 'access content'
-```
-
 ## 控制器
 
 文件：

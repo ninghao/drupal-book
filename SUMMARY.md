@@ -8,6 +8,7 @@
 ## Module
 
 * [自定义模块](custom-module.md)
+* [路由](route.md)
 
 ## 附录
 
