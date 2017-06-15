@@ -10,7 +10,7 @@
 * [自定义模块](custom-module.md)
 * [路由](route.md)
 * [控制器](controller.md)
-* [service](service.md)
+* [服务](service.md)
 
 ## 附录
 
