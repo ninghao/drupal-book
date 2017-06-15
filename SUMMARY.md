@@ -4,9 +4,12 @@
 
 * [Drupal](README.md)
 * [预览](overview.md)
-* [相关资源](appendix--resources.md)
 
 ## Module
 
 * [自定义模块](module/custom-module.md)
+
+## 附录
+
+* [相关资源](appendix--resources.md)
 
