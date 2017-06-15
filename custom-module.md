@@ -108,6 +108,8 @@ class NinghaoController {
 
 ## 容器
 
+把服务放到容器里，需要服务的时候从容器那里要。
+
 ```
 drupal container:debug
 ```
