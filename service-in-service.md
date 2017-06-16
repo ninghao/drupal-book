@@ -88,7 +88,66 @@ services:
 ## 配置
 
 ```
+sites/development.services.yml
+```
 
+```
+parameters:
+  http.response.debug_cacheability_headers: true
+  twig.config:
+    debug: true
+    cache: false
+  ninghao.hello.use_key_value_cache: false
+services:
+  cache.backend.null:
+    class: Drupal\Core\Cache\NullBackendFactory
+
+```
+
+```
+modules/custom/ninghao/ninghao.services.yml
+```
+
+```
+parameters:
+  ninghao.hello.use_key_value_cache: true
+services:
+  ninghao.hello:
+    class: Drupal\ninghao\Service\Greeting
+    arguments:
+      - '@keyvalue'
+      - %ninghao.hello.use_key_value_cache%
+```
+
+```
+modules/custom/ninghao/src/Service/Greeting.php
+```
+
+```
+namespace Drupal\ninghao\Service;
+use Drupal\Core\KeyValueStore\KeyValueFactoryInterface;
+
+class Greeting {
+  private $keyValueFactory;
+  private $useCache;
+
+  public function __construct(KeyValueFactoryInterface $keyValueFactory, $useCache) {
+    $this->keyValueFactory = $keyValueFactory;
+    $this->useCache = $useCache;
+  }
+
+  public function sayHello() {
+    $key = 'ninghao_greeting_1';
+    $store = $this->keyValueFactory->get('ninghao');
+    if ($this->useCache && $store->has($key)) {
+      return $store->get($key);
+    }
+    sleep(2);
+    $string = 'hello';
+    $store->set($key, $string);
+    return $string;
+  }
+}
 ```
 
 
