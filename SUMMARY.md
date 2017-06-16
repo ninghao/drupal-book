@@ -15,7 +15,7 @@
 * [核心服务](core-services.md)
 * [KeyValue](keyvalue.md)
 * [服务中的服务](service-in-service.md)
-* [Event](event.md)
+* [事件](event.md)
 * [钩子](hook.md)
 
 ## 附录
