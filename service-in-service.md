@@ -1,4 +1,37 @@
-# KeyValue
+# 服务中的服务
+
+```
+modules/custom/ninghao/src/Service/Greeting.php
+```
+
+```php
+namespace Drupal\ninghao\Service;
+use Drupal\Core\KeyValueStore\KeyValueFactoryInterface;
+
+class Greeting {
+  private $keyValueFactory;
+
+  public function __construct(KeyValueFactoryInterface $keyValueFactory) {
+    $this->keyValueFactory = $keyValueFactory;
+  }
+
+  public function sayHello() {
+    $key = 'ninghao_greeting_1';
+    $store = $this->keyValueFactory->get('ninghao');
+    if ($store->has($key)) {
+      return $store->get($key);
+    }
+    sleep(2);
+    $string = 'hello';
+    $store->set($key, $string);
+    return $string;
+  }
+}
+```
+
+```
+modules/custom/ninghao/src/Controller/NinghaoController.php
+```
 
 ```php
 namespace Drupal\ninghao\Controller;
@@ -19,10 +52,10 @@ class NinghaoController extends ControllerBase {
   }
 
   public function hello() {
-    $keyValueStore = $this->keyValue('ninghao');
+    // $keyValueStore = $this->keyValue('ninghao');
 
     $hello = $this->greeting->sayHello();
-    $keyValueStore->set('greeting', $hello);
+    // $keyValueStore->set('greeting', $hello);
     // $hello = $keyValueStore->get('greeting');
     $this->loggerFactoryService->get('default')
       ->debug($hello);
@@ -38,15 +71,18 @@ class NinghaoController extends ControllerBase {
 }
 ```
 
-ControllerBase.php
+services
 
-```php
-  protected function keyValue($collection) {
-    if (!$this->keyValue) {
-      $this->keyValue = $this->container()->get('keyvalue')->get($collection);
-    }
-    return $this->keyValue;
-  }
+```
+modules/custom/ninghao/ninghao.services.yml
+```
+
+```
+services:
+  ninghao.hello:
+    class: Drupal\ninghao\Service\Greeting
+    arguments:
+      - '@keyvalue'
 ```
 
 

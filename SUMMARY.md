@@ -14,9 +14,11 @@
 * [容器](container.md)
 * [核心服务](core-services.md)
 * [KeyValue](keyvalue.md)
+* [service in service](service-in-service.md)
 * [事件](event.md)
 
 ## 附录
 
+* [Editor](editor.md)
 * [相关资源](appendix--resources.md)
 
