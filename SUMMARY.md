@@ -20,6 +20,6 @@
 
 ## 附录
 
-* [Editor](editor.md)
+* [编辑器](editor.md)
 * [相关资源](appendix--resources.md)
 
