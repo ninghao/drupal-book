@@ -26,13 +26,12 @@ class NinghaoListener implements EventSubscriberInterface {
     }
   }
 
-  public static function getSubscribeEvents() {
+  public static function getSubscribedEvents() {
     return [
       KernelEvents::REQUEST => 'onKernelRequest'
     ];
   }
 }
-
 ```
 
 ```
