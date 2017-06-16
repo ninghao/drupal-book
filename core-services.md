@@ -44,5 +44,5 @@ class NinghaoController extends ControllerBase {
 }
 ```
 
-访问 ninghao/hello，然后在 admin/reports/dblog 查看日志，应该会出现一个 hello 。
+访问 ninghao/hello，然后在 admin/reports/dblog 查看日志，会出现 hello 。
 
